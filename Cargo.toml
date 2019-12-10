@@ -1,0 +1,19 @@
+[package]
+name = "ekg"
+version = "0.1.0"
+authors = ["Dan Bryant <dan@deepwavedigital.com>"]
+edition = "2018"
+
+[lib]
+name = "ekg_jetson"
+path = "src/ekg_jetson/lib.rs"
+
+[[bin]]
+name = "ekg"
+path = "src/ekg/main.rs"
+test = false
+doc = false
+
+[dependencies]
+bytesize = "1.0.0"
+chrono = "0.4.10"
