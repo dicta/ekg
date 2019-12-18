@@ -16,3 +16,10 @@ doc = false
 
 [dependencies]
 chrono = "0.4.10"
+
+[package.metadata.deb]
+maintainer = "Deepwave Digital, Inc. <info@deepwavedigital.com>"
+copyright = "2019, Deepwave Digital, Inc. <info@deepwavedigital.com>"
+assets = [
+    ["target/release/ekg", "usr/bin/", "4755"],
+]
