@@ -6,7 +6,6 @@
  * information on the NVIDIA Jetson series of embedded compute modules.
  */
 
-extern crate bytesize;
 extern crate chrono;
 
 pub mod gpu;
