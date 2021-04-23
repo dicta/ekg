@@ -45,7 +45,7 @@ impl Thermal {
 impl ThermalSensorMeasurement {
     pub fn new<P: AsRef<Path>>(path: P) -> io::Result<Self> {
         let name = util::string_from_file(path.as_ref().join("type"))?;
-        let temp : u32 = util::value_from_file(path.as_ref().join("temp"))?;
+        let temp : i32 = util::value_from_file(path.as_ref().join("temp"))?;
 
         Ok(ThermalSensorMeasurement {
             sensor_name:  name,
