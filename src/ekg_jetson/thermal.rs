@@ -47,10 +47,15 @@ impl ThermalSensorMeasurement {
         let name = util::string_from_file(path.as_ref().join("type"))?;
         let temp : i32 = util::value_from_file(path.as_ref().join("temp"))?;
 
-        Ok(ThermalSensorMeasurement {
-            sensor_name:  name,
-            temp_degrees: temp as f32 / 1000.0
-        })
+        // This sensor is invalid and just has a dummy value, so exclude it.
+        if name == "PMIC-Die" {
+            Err(io::Error::new(io::ErrorKind::Other, "Invalid sensor"))
+        } else {
+            Ok(ThermalSensorMeasurement {
+                sensor_name:  name,
+                temp_degrees: temp as f32 / 1000.0
+            })
+        }
     }
 }
 
