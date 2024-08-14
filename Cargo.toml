@@ -1,8 +1,8 @@
 [package]
 name = "ekg"
-version = "0.2.1"
+version = "0.3.0"
 authors = ["Dan Bryant <dan@deepwavedigital.com>"]
-edition = "2018"
+edition = "2021"
 
 [lib]
 name = "ekg_jetson"
@@ -15,11 +15,11 @@ test = false
 doc = false
 
 [dependencies]
-chrono = "0.4.10"
+chrono = "0.4"
 
 [package.metadata.deb]
 maintainer = "Deepwave Digital, Inc. <info@deepwavedigital.com>"
-copyright = "2019, Deepwave Digital, Inc. <info@deepwavedigital.com>"
+copyright = "2019-2024, Deepwave Digital, Inc. <info@deepwavedigital.com>"
 assets = [
     ["target/release/ekg", "usr/bin/", "4755"],
 ]
