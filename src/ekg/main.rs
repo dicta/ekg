@@ -10,11 +10,14 @@ fn main() -> Result<(), Box<dyn Error>> {
             format!("{}={:.2}", &e.sensor_name, &e.temp_degrees)
         }).collect();
 
-    println!("temp,sensor=jetson_thermal {}", therm_meas_strs.join(","));
+    println!("jetson,sensor=jetson_thermal {}", therm_meas_strs.join(","));
 
     let gpu = Gpu::new()?;
 
-    println!("gpu,gpu=jetson freq={:.2},load={:.3}", gpu.gpu_freq, gpu.gpu_load);
+    println!("jetson,sensor=gpu freq={:.2},load={:.3}", gpu.gpu_freq, gpu.gpu_load);
+
+    let emc = Emc::new()?;
+    println!("jetson,sensor=mem freq={:.2},overtemp_flag={:.3}", emc.mem_freq, emc.mem_overtemp);
 
     Ok(())
 }

@@ -9,9 +9,11 @@
 extern crate chrono;
 
 pub mod gpu;
+pub mod mem;
 pub mod thermal;
 pub mod util;
 
 pub use self::gpu::Gpu;
+pub use self::mem::Emc;
 pub use self::thermal::Thermal;
 pub use self::util::*;
